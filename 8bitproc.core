@@ -1,0 +1,33 @@
+CAPI=2:
+name : nau:lab8:cpu:1.0
+
+filesets:
+  hdl:
+    files:
+      - hdl/cpu.sv : {file_type : systemVerilogSource}
+      - hdl/cu.sv : {file_type : systemVerilogSource}
+      - hdl/alu.sv : {file_type : systemVerilogSource}
+      - hdl/ramlp.sv : {file_type : systemVerilogSource}
+      - hdl/pc.sv : {file_type : systemVerilogSource}
+      - hdl/ac.sv : {file_type : systemVerilogSource}
+      - hdl/ir.sv : {file_type : systemVerilogSource}
+
+
+  sim:
+    files:
+      - sim/cpu_tb.sv : {file_type : systemVerilogSource}
+
+
+targets:
+  default:
+    filesets: [hdl]
+
+  sim:
+    default_tool: xsim 
+    filesets: [hdl, sim]
+    tools:
+      modelsim:
+        vlog_options: [-timescale=1ns/1ns]
+      xsim:
+        xelab_options: [--debug, all, --timescale, 1ns/1ns]
+    toplevel: cpu_tb
