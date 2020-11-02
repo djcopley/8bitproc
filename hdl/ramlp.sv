@@ -8,7 +8,7 @@
 //Module Declaration
 module ramlp(input logic clock, wren, input logic [7:0] address, data, output logic [7:0] q);
 
-logic [255:0][7:0] ram;
+logic [30:0][7:0] ram;
 
 initial begin
     ram[0] = 'h02;

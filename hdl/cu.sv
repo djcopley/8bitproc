@@ -30,10 +30,6 @@ end
 endfunction
 
 
-integer optest;
-assign optest = opclass(opcode);
-
-
 // Current state driver
 always @(negedge clk, posedge rst) begin
     if (rst) begin
@@ -75,7 +71,7 @@ end
 
 // Output driver
 always_comb begin
-    // All outputs should be 0 by default
+    // Default outputs
     load_pc = 0;
     incr_pc = 0;
     load_ac = 0;
@@ -99,12 +95,8 @@ always_comb begin
             incr_pc = 1;
             load_irl = 1;
         end
-        EXECUTE_1 : begin
+        EXECUTE_1, EXECUTE_2 : begin
             load_ac = 1;
-        end
-        EXECUTE_2 : begin
-            load_ac = 1;
-            store_mem = 1;
         end
         EXECUTE_3A : begin
             fetch = 0;
@@ -112,7 +104,6 @@ always_comb begin
         EXECUTE_3B : begin
             fetch = 0;
             load_ac = 1;
-            store_mem = 1;
         end
         EXECUTE_4 : begin
             fetch = 0;

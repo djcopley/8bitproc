@@ -7,7 +7,7 @@ module cpu(
 
 // Internal logic signals
 logic load_pc, incr_pc, load_ac, load_iru, load_irl, fetch, store_mem, zflag, nflag;
-logic [4:0] state;
+logic [3:0] state;
 logic [7:0] mdr_bus, ac_bus, pc_bus, addr_bus, iru_bus, irl_bus, z_bus;
 
 // Control unit
