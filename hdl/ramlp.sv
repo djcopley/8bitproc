@@ -15,13 +15,17 @@ initial begin
     ram[1] = 'hE7;
     ram[2] = 'h03;
     ram[3] = 'h10;
-    ram[4] = 'h0B;
-    ram[5] = 'h10;
-    ram[6] = 'h0E;
-    ram[7] = 'h03;
-    ram[8] = 'h0F;
-    ram[9] = 'h93;
-    ram[10] = 'h04;
+    ram[4] = 'h09;
+    ram[5] = 'h0B;
+    ram[6] = 'h10;
+    ram[7] = 'h0A;
+    ram[8] = 'h0E;
+    ram[9] = 'h03;
+    ram[10] = 'h0F;
+    ram[11] = 'h93;
+    ram[12] = 'h04;
+    ram[13] = 'h01;
+    ram[14] = 'h10;
 end
 
 always @(posedge clock) begin

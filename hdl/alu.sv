@@ -28,8 +28,8 @@ always_latch begin
         'h0B : z = ac & mdr;
         'h0C : z = ac | mdr;
         'h0D : z = ac ^ mdr;
-        'h0E : z = ac << value;
-        'h0F : z = ac >> value;
+        'h0E : z = ac << value[2:0];
+        'h0F : z = ac >> value[2:0];
         // 'h10-'h14 are jump commands controlled by control unit
     endcase
 end
